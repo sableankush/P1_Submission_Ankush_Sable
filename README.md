@@ -192,6 +192,10 @@ Use this command for loading data:
 
 Step 9: Last run the Django project
 
+Before running the django project please add the environment .json file which is specific to the environment at the manage.py file level. The sample file screenshot is shown below.
+
+![alt text](<Screenshot from 2024-05-09 17-25-41.png>)
+
         python manage.py runserver
 
 🎉 Demonstration of the App
