@@ -17,8 +17,8 @@ class AllFacility(APIView):
         try:
             err = check_page_parameters(self)
             if not err:
-                page_number = abs(int(self.request.query_params.get('page', 1)))
-                page_size = abs(int(self.request.query_params.get('size', 20)))
+                page_number = int(self.request.query_params.get('page', 1))
+                page_size = int(self.request.query_params.get('size', 20))
                 last_record = page_number * page_size
                 initial_record = last_record-page_size
                 
@@ -49,8 +49,8 @@ class NearByFacility(APIView):
             err = check_page_parameters(self)
             if not err:
                 body = request.data
-                page_number = abs(int(self.request.query_params.get('page', 1)))
-                page_size = abs(int(self.request.query_params.get('size', 20)))
+                page_number = int(self.request.query_params.get('page', 1))
+                page_size = int(self.request.query_params.get('size', 20))
                 last_record = page_number * page_size
                 initial_record = last_record-page_size
 

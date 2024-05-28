@@ -8,7 +8,9 @@ def check_page_parameters(self):
 
     for key in list(error.keys()):
         try:
-            int(self.request.query_params.get(key, '1').strip())
+            param = int(self.request.query_params.get(key, '1'))
+            if not param > 0:
+                return error.get(key)
         except:
             return error.get(key)
         
